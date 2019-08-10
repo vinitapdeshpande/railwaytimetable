@@ -69,11 +69,11 @@ pipeline {
                     enableConfigSubstitution: true
                 )
                 
-                  withKubeConfig([credentialsId: 'kubeconfig'
+       /*           withKubeConfig([credentialsId: 'kubeconfig'
                     ]) {
                 sh 'kubectl delete service railway-timetable-service-canary'
                 sh 'kubectl delete deployment railway-timetable-deployment-canary'
-    }
+    }*/
                 
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
