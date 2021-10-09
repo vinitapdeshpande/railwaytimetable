@@ -80,7 +80,8 @@ pipeline {
                     configs: 'railwaytt-kube.yml',
                     enableConfigSubstitution: true
                 )
-                   stage('SmokeTest') {
+            }
+          stage('SmokeTest') {
             when {
                 branch 'master'
             }
