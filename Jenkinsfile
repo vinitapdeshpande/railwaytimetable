@@ -80,21 +80,8 @@ pipeline {
                     configs: 'railwaytt-kube.yml',
                     enableConfigSubstitution: true
                 )
-            }
-          stage('SmokeTest') {
-            when {
-                branch 'master'
-            }
-            steps {
-                script {
-                    sleep (time: 5)
-                    def response = httpRequest (
-                        url: "http://$KUBE_MASTER_IP:30083/",
-                        timeout: 30
-                    )
-                    if (response.status != 200) {
-                        error("Smoke test against canary deployment failed.")
-                    }
+ 
+                     }
                 }
             }
         }
